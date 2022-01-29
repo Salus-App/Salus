@@ -1,5 +1,6 @@
 //import controllers
 const userController = require('../controller/userController')
+const apiController = require('../controller/apiController')
 const express = require('express');
 const router = express.Router();
 
@@ -11,14 +12,14 @@ router.get('/',
 );
 
 //get music
-router.get('/api/music', 
-  userController.getMusic,
+router.get('/music', 
+  apiController.getMusic,
  (req,res) => res.sendStatus(200).json({})
 )
 
 //get podcasts
-router.get('/api/podcats', 
-  userController.getMusic,
+router.get('/podcasts', 
+  apiController.getPodcasts,
   (req,res) => res.sendStatus(200).json({})
 )
 
