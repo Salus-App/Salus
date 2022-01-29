@@ -1,0 +1,41 @@
+{
+  "name": "salus",
+  "version": "2.0.0",
+  "description": "One Stop Health/Wellness App",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"cross-env NODE_ENV=development webpack serve\" \"cross-env NODE_ENV=development nodemon server/server.js\"",
+    "build": "cross-env NODE_ENV=production webpack",
+    "start": "cross-env NODE_ENV=production nodemon server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wunderpuss-Photogenicus-scratch/Salus.git"
+  },
+  "author": "Young/ Phoenix/ Brian/ Jiwon/ Drake",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wunderpuss-Photogenicus-scratch/Salus/issues"
+  },
+  "homepage": "https://github.com/Wunderpuss-Photogenicus-scratch/Salus#readme",
+  "devDependencies": {
+    "@babel/core": "^7.16.12",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.3",
+    "concurrently": "^7.0.0",
+    "html-webpack-plugin": "^5.5.0",
+    "nodemon": "^2.0.15",
+    "webpack": "^5.67.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.3"
+  },
+  "dependencies": {
+    "axios": "^0.25.0",
+    "cross-env": "^7.0.3",
+    "express": "^4.17.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
