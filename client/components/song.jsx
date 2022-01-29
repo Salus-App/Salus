@@ -1,0 +1,4 @@
+//song
+    //name
+    //artist
+    //toggleButton
