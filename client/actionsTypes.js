@@ -4,7 +4,7 @@
 export const ADD_USER = "ADD_USER";
 
 // action type for bringing up the song list for the current user 
-export const RENDER_SONGLIST = "RENDER_SONGLIST";
+export const RENDER_SONG = "RENDER_SONG";
 
 // action type for adding a song to the favorite list 
 export const ADD_SONG = "ADD_SONG";
@@ -19,7 +19,7 @@ export const ADD_PODCAST = "ADD_PODCAST";
 export const DELETE_SONG = "DELETE_SONG";
 
 // action type for deleting podcasts off your favs list
-export const DELETE_PODCAST = "DELETEPODCAST";
+export const DELETE_PODCAST = "DELETE_PODCAST";
 
 
 

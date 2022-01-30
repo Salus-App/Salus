@@ -3,7 +3,7 @@
     //favSongList
     //favPodcastList
 //
-
+const axios = require('axios');
 import * as types from './actionsTypes';
 
 const initialState = {
@@ -45,7 +45,11 @@ const appReducer = (state = initialState, action) => {
             console.log('favPodcastList', favPodcastList);
             // send a post request to the server to update the user info inside the DB
                 // but how would I do this?
-
+            axios.post('/user',{
+                
+            })
+            .then(response => console.log(response))
+            .catch(error => console.log(error));
             // return the updated state 
             return {
                 ...state,
@@ -70,7 +74,40 @@ const appReducer = (state = initialState, action) => {
         }
 
         case types.RENDER_SONGLIST : {
-            // make a shallow copy of the states SongList 
+            const newArr = [];
+                axios.get('/api/music')
+                .then((response)=> response.json())
+                .catch((error)=>console.log(error))
+                .then((result)=> {
+                    console.log(result);
+                    result.forEach(el=>{
+                        newArr.push(el);
+                    })
+                })
+
+                return {
+                    ...state,
+                    songList = newArr
+                }
+        }
+
+        case types.RENDER_PODCAST : {
+            const newArr = [];
+
+            axios.get('/api/podcast')
+            .then((response)=> response.json())
+            .catch((error)=>console.log(error))
+            .then((result)=> {
+                console.log(result);
+                result.forEach(el=>{
+                    newArr.push(el);
+                })
+            })
+
+            return {
+                ...state,
+                podcastList : newArr
+            }
         }
             
             
