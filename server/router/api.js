@@ -23,6 +23,10 @@ router.get('/podcasts',
   (req,res) => res.sendStatus(200).json({})
 )
 
+router.get('/newUser',
+  userController.createUser,
+  (req,res) => res.status(200).json({})
+);
 
 //export
 module.exports = router;
