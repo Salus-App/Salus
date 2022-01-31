@@ -1,8 +1,4 @@
-//initialState
-    //user
-    //favSongList
-    //favPodcastList
-//
+
 const axios = require('axios');
 import * as types from './actionsTypes';
 

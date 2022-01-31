@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Muli');
+
 html {
     height: 100%;
     width: 100%
@@ -7,7 +9,7 @@ header {
     width: 100%;
     height: 3em;
     padding: 1rem 0 1rem 0;
-    background-color: #7a7a7e;
+    background-color: #a2a2a2;
 }
 
 .o-main-nav {
@@ -30,10 +32,11 @@ header {
     align-items: center;
     font-size: 2rem;
     font-weight: 200;
-    color: #3b0649;
+    color: #faf8ff;
     position: relative;
     top: -24px;
     left: 18px;
+    letter-spacing: 2px;
 }
 
 .o-main-nav-list-link {
@@ -88,4 +91,28 @@ header {
     position: relative;
     top: 13px;
     left: -100px;
+}
+
+.flex-center {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.logo {
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+    overflow: hidden;
+    width: auto;
+    color: #a2a2a2;
+    font-size: 32px;
+    text-transform: uppercase;
+    font-family: 'Muli', 'Century Gothic', sans-serif;
+    letter-spacing: 15px;
 }
