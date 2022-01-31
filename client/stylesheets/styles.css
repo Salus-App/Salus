@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Muli');
 
 html {
+    background-color: rgb(164, 208, 245);
     height: 100%;
     width: 100%
 }
@@ -107,6 +108,7 @@ header {
 .logo {
     position: relative;
     top: -150px;
+    right: -80px;
     display: inline-block;
     margin: 0 auto;
     overflow: hidden;

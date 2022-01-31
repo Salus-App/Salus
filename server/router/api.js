@@ -14,13 +14,17 @@ router.post('/',
 
 //get music
 router.get('/music', 
-  apiController.getMusic,
+  // apiController.getSearchPlaylist,
+  // apiController.getPlaylist,
  (req,res) => res.sendStatus(200).json({})
 )
 
 //get podcasts
 router.get('/podcasts', 
-  apiController.getPodcasts,
+  // apiController.getSearchShow,
+  // apiController.getShows, 
+  // apiController.getShowEpisodes, 
+  // apiController.getShows,
   (req,res) => res.sendStatus(200).json({})
 )
 

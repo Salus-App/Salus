@@ -2,6 +2,8 @@ import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App.jsx';
+import { Provider } from 'react-redux'
+import store from './store.js'
 
 
 // uncomment so that webpack can bundle styles
@@ -9,8 +11,9 @@ import App from './App.jsx';
 
 render(
   <BrowserRouter>
-    {/* <h1>Why does this render but not app</h1> */}
-    <App />
+    <Provider store = {store}>
+      <App />
+    </Provider>
   </BrowserRouter>,
   document.getElementById('root')
 );
