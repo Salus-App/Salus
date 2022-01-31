@@ -7,6 +7,10 @@ const HomeContainer = () => {
                 <div className = "logo">
                     <p>Salus</p>
                 </div>
+                <form id = "user-form">
+                    <label htmlFor = "user"></label><br/>
+                    <input className = "input-box" type = "text" id = "user" name = "user" value = "enter username"></input>
+                </form>
             </div>
         </body>
     )

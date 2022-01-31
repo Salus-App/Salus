@@ -106,13 +106,14 @@ header {
 
 .logo {
     position: relative;
+    top: -150px;
     display: inline-block;
     margin: 0 auto;
     overflow: hidden;
     width: auto;
     color: #a2a2a2;
-    font-size: 32px;
+    font-size: 50px;
     text-transform: uppercase;
     font-family: 'Muli', 'Century Gothic', sans-serif;
-    letter-spacing: 15px;
+    letter-spacing: 30px;
 }

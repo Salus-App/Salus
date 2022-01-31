@@ -1,15 +1,19 @@
 import React from 'react';
 import Podcast from './podcast.jsx';
 
+//need to update onClickFunc to play the podcast, and then secondOnClickFunc to dispatch action to add podcast or delete if it's already added
+
 const PodcastList = () => {
     //mapStateToProps
         //maps the songList and the user
     function mapStateToProps(state){
         return ({
-            podcast: state.podcastList
+            favPodCastList: state.favPodCastList,
+            podcastList : state.podcastList
         })
     }
     
+    //These are for adding a podcast to a user's favorite list
     //mapDispatchToProps
         //map actions favSong 
     function mapDispatchToProps (dispatch) {
