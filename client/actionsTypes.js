@@ -4,7 +4,7 @@
 export const ADD_USER = "ADD_USER";
 
 // action type for bringing up the song list for the current user 
-export const RENDER_SONG = "RENDER_SONG";
+export const RENDER_SONGLIST = "RENDER_SONGLIST";
 
 // action type for adding a song to the favorite list 
 export const ADD_SONG = "ADD_SONG";

@@ -2,6 +2,6 @@ import { createStore } from 'redux';
 import appReducer from './appReducer';
 
 
-const store = configureStore({reducer : appReducer});
+const store = createStore(appReducer)
 
 export default store;

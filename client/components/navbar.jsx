@@ -3,15 +3,16 @@ import React from 'react';
 
 
 const Navbar = () => {
-    //mapDispatchToProps
-    //podcast -> renderSongList onclick
-    //song -> renderSongList onclick
-    function mapDispatchToProps(dispatch){
-        return ({
-            renderSongs : ()=>{dispatch(renderSongActionCreator)},
-            renderPodCasts : ()=> {dispatch(renderPodcastActionCreator)}
-        })
-    }
+    
+    //onClick function for podcasts, when you click on podcasts in the navbar it clears songList to ensure that there isn't needless persisting data, and then
+    //updates state.podcastList in order for it to render on that page
+    //Same for song, just other way around
+    // function mapDispatchToProps(dispatch){
+    //     return ({
+    //         renderSongs : ()=>{dispatch(renderSongActionCreator)},
+    //         renderPodCasts : ()=> {dispatch(renderPodcastActionCreator)}
+    //     })
+    // }
 
     return (
         <div id = "nav-body">
