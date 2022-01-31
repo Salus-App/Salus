@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-
-//makes call to spotify api
-
-
-=======
->>>>>>> dev
 const axios = require('axios');
 const { useContext } = require('react');
 const SpotifyWebApi = require('spotify-web-api-node');
@@ -152,9 +143,5 @@ apiController.getTracks = (req, res, next) => {
 }
 
 
-<<<<<<< HEAD
 module.exports = apiController;
-=======
-module.exports = apiController;
->>>>>>> dev
->>>>>>> dev
+
