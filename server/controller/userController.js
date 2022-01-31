@@ -10,7 +10,7 @@ const userController = {};
         if(err){
             return next({message : 'Error in userController.createuser'});
            } 
-        if (result.user_id) {     
+        if (result.rows[0]) {     
          return next();    
         }
         const newUser = `INSERT INTO users (user_id) VALUES ($1)`
@@ -28,7 +28,7 @@ userController.getUser = (req, res, next) => {
         if(err){
             return next({message : 'Error in userController.getuser'});
         } 
-        res.locals.user = result;
+        res.locals.user = result.rows[0];
         return next();
     })
 }
