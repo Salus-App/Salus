@@ -7,7 +7,8 @@ const router = express.Router();
 
 //get user
 router.post('/',
-  userController.getUser, userController.createUser,
+  userController.createUser,
+  userController.getUser,
   (req,res) => res.status(200).json(res.locals)
 );
 
