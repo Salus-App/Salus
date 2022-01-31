@@ -7,8 +7,8 @@ const router = express.Router();
 
 //get user
 router.post('/',
-  userController.getUser,
-  (req,res) => res.status(200).json({})
+  userController.getUser, userController.createUser,
+  (req,res) => res.status(200).json(res.locals)
 );
 
 //get music
@@ -22,11 +22,6 @@ router.get('/podcasts',
   apiController.getPodcasts,
   (req,res) => res.sendStatus(200).json({})
 )
-
-router.get('/newUser',
-  userController.createUser,
-  (req,res) => res.status(200).json({})
-);
 
 //export
 module.exports = router;
