@@ -1,11 +1,27 @@
 import React from 'react';
 import Podcast from './podcast.jsx';
 
+//need to update onClickFunc to play the podcast, and then secondOnClickFunc to dispatch action to add podcast or delete if it's already added
+
 const PodcastList = () => {
-    // Going to call an action that returns a songList, how exactly is this state going to be populated?
-
-    //const podcasts = state.podcastList
-
+    //mapStateToProps
+        //maps the songList and the user
+    function mapStateToProps(state){
+        return ({
+            favPodCastList: state.favPodCastList,
+            podcastList : state.podcastList
+        })
+    }
+    
+    //These are for adding a podcast to a user's favorite list
+    //mapDispatchToProps
+        //map actions favSong 
+    function mapDispatchToProps (dispatch) {
+        return ({
+            addPodcast : () =>{dispatch(addPodcastActionCreator)},
+            deletePodcast : ()=> {dispatch(deletePodcastActionCreator)}
+        })
+    }
     //forEach podcast in podcastList, generate a component
     const podcasts = [{title: "joeRogan", host: "JOe Rogan"}, {title: "somePodcast", host: "someguy"}, {title: "someOtherPodcast", host: "somegirl"}]
 
@@ -15,6 +31,7 @@ const PodcastList = () => {
                 title = {podcastObj.title}
                 host = {podcastObj.host}
                 onClickFunc = {() => console.log('hit')}
+                secondOnClickFunc = {() => console.log('hit fav')}
             />
             
         )
@@ -28,4 +45,4 @@ const PodcastList = () => {
     )
 }
 
-export default PodcastList
+export default PodcastList; // make sure to connect mapDispatchToProps, mapStateToProps 

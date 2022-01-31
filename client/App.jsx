@@ -5,6 +5,7 @@ import Layout from './components/layout.jsx';
 import HomeContainer from './containers/homeContainer.jsx';
 import PodcastContainer from './containers/podcastContainer.jsx';
 import SongContainer from './containers/songContainer.jsx';
+import './stylesheets/styles.css';
 
 export const App = () => {
     return (

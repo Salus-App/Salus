@@ -1,9 +1,5 @@
-//initialState
-    //user
-    //favSongList
-    //favPodcastList
-//
 
+const axios = require('axios');
 import * as types from './actionsTypes';
 
 const initialState = {
@@ -45,7 +41,11 @@ const appReducer = (state = initialState, action) => {
             console.log('favPodcastList', favPodcastList);
             // send a post request to the server to update the user info inside the DB
                 // but how would I do this?
-
+            axios.post('/user',{
+                
+            })
+            .then(response => console.log(response))
+            .catch(error => console.log(error));
             // return the updated state 
             return {
                 ...state,
@@ -61,6 +61,9 @@ const appReducer = (state = initialState, action) => {
             for(let i=0;i<favSongList.length;i++){
                 // if the song we have selected to delete is the current element
                  // delete the song
+                 if(favSongList[i] === podcasts_id){
+
+                 }
             }
 
             return {
@@ -70,11 +73,43 @@ const appReducer = (state = initialState, action) => {
         }
 
         case types.RENDER_SONGLIST : {
-            // make a shallow copy of the states SongList 
+            const newArr = [];
+                axios.get('/api/music')
+                .then((response)=> {
+                    console.log(response);
+                    response.forEach(el=>{
+                        newArr.push(el);
+                    })
+                })
+                .catch((error)=>console.log(error))
+
+                return {
+                    ...state,
+                    songList = newArr
+                }
+        }
+
+        case types.RENDER_PODCAST : {
+            const newArr = [];
+
+            axios.get('/api/podcast')
+            .then((response)=> {
+                console.log(response);
+                response.forEach(el=>{
+                    newArr.push(el);
+                })
+            })
+            .catch((error)=>console.log(error))
+            .then( () => {
+                return {
+                    ...state,
+                    podcastList : newArr
+                }
+            })
         }
             
             
-    
+        
         default: {
             // initial render, we want to return the initial state so no bug/erros 
             return state;
@@ -86,9 +121,3 @@ const appReducer = (state = initialState, action) => {
 
 
 }
-
-//reducer
-    //addSong
-    //addPodcast
-    //addUser
-//

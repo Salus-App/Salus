@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Muli');
+
+html {
+    height: 100%;
+    width: 100%
+}
+
+header {
+    width: 100%;
+    height: 3em;
+    padding: 1rem 0 1rem 0;
+    background-color: #a2a2a2;
+}
+
+.o-main-nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: "Raleway";
+}
+
+.o-main-nav-m {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.o-main-nav-logo {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 200;
+    color: #faf8ff;
+    position: relative;
+    top: -24px;
+    left: 18px;
+    letter-spacing: 2px;
+}
+
+.o-main-nav-list-link {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    left: -100%;
+    background-color: #333333;
+    overflow: hidden;
+    transition: left 0.5s linear;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.o-main-nav-item {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0 2rem 0;
+}
+
+.o-main-nav-link {
+    font-size: 1.375rem;
+    color: #faf8ff;
+    opacity: 0.7;
+    transition: 0.25s;
+    text-decoration: none;
+}
+
+.o-main-nav-link:hover {
+    opacity: 1;
+}
+
+
+#home {
+    position: relative;
+    top: 13px;
+    left: -200px;
+}
+
+#podcasts {
+    position: relative;
+    top: 13px;
+    left: -150px;
+}
+
+#songs {
+    position: relative;
+    top: 13px;
+    left: -100px;
+}
+
+.flex-center {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.logo {
+    position: relative;
+    top: -150px;
+    display: inline-block;
+    margin: 0 auto;
+    overflow: hidden;
+    width: auto;
+    color: #a2a2a2;
+    font-size: 50px;
+    text-transform: uppercase;
+    font-family: 'Muli', 'Century Gothic', sans-serif;
+    letter-spacing: 30px;
+}
