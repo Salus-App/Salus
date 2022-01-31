@@ -6,7 +6,7 @@ const router = express.Router();
 
 
 //get user
-router.get('/',
+router.post('/',
   userController.getUser,
   (req,res) => res.status(200).json({})
 );
