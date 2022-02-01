@@ -1,8 +1,4 @@
-
-//makes call to spotify api
-
 const axios = require('axios');
-const { useContext } = require('react');
 const SpotifyWebApi = require('spotify-web-api-node');
 
 const spotifyApi = new SpotifyWebApi();
@@ -40,7 +36,7 @@ apiController.getToken = async (req, res, next) => {
 apiController.getSearchShow = (req, res, next) => {
     spotifyApi.search('relaxation, meditation', ['show'], { market: 'US' })
         .then(data => {
-            res.locals.search = data.body;
+            res.locals.search = data.body.shows.items[0].id;
             next();
         }, err => {
             next({
@@ -53,7 +49,8 @@ apiController.getSearchShow = (req, res, next) => {
 // getting several shows - showIds is an array that includes string elements of the Spotify IDs
 // example: ['1yr9UUExTaxZJqktomu7Gd', '7nnP4iUm1xKsvjkG3xtWXv']
 apiController.getShows = (req, res, next) => {
-    const showIds = req.query.id;
+    let showIds = [];
+    showIds.push(res.locals.search);
     spotifyApi.getShows(showIds, { market: 'US' })
         .then(data => {
             res.locals.shows = data.body;
@@ -69,10 +66,13 @@ apiController.getShows = (req, res, next) => {
 // showId is a string that includes one Spotify ID of a show
 // example: '1yr9UUExTaxZJqktomu7Gd'
 apiController.getShowEpisodes = (req, res, next) => {
-    const showId = req.query.id;
+    const showId = res.locals.search;
     spotifyApi.getShowEpisodes(showId, { market: 'US' })
         .then(data => {
-            res.locals.showEpisodes = data.body;
+            res.locals.showEpisodes = {
+                externalUrl: data.body.items[0].external_urls,
+                previewUrl: data.body.items[0].audio_preview_url
+            };
             next();
         }, err => {
             next({
