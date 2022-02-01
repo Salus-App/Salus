@@ -1,4 +1,3 @@
-
 const axios = require('axios');
 import * as types from './actionsTypes';
 
@@ -14,10 +13,11 @@ const appReducer = (state = initialState, action) => {
     switch (action.type) {
         case types.ADD_USER: {
             // create a new user object from the provided user input 
-            axios.post('/api', {
-                user: action.payload
-            })
-            .then(() => {
+            console.log('hitting addUser reducer')
+            axios.post('/api', {user: action.payload})
+            .then((data) => {
+                console.log('PAYLOAD', action.payload);
+                console.log('DATA', data);
                 return {
                     ...state,
                     user: action.payload
