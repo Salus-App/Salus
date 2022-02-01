@@ -9,23 +9,23 @@ const router = express.Router();
 router.post('/',
   userController.createUser,
   userController.getUser,
-  (req,res) => res.status(200).json(res.locals)
+  (req, res) => res.status(200).json(res.locals)
 );
 
 //get music
-router.get('/music', 
-  // apiController.getSearchPlaylist,
-  // apiController.getPlaylist,
- (req,res) => res.sendStatus(200).json({})
+router.get('/music',
+  apiController.getToken,
+  apiController.getSearchPlaylist,
+  apiController.getPlaylist,
+  (req, res) => res.sendStatus(200).json()
 )
 
 //get podcasts
-router.get('/podcasts', 
-  // apiController.getSearchShow,
-  // apiController.getShows, 
-  // apiController.getShowEpisodes, 
-  // apiController.getShows,
-  (req,res) => res.sendStatus(200).json({})
+router.get('/podcasts',
+  apiController.getToken,
+  apiController.getSearchShow,
+  apiController.getShowEpisodes,
+  (req, res) => res.sendStatus(200).json(res.locals.showEpisodes)
 )
 
 //export
